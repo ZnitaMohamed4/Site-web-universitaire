@@ -1,0 +1,118 @@
+
+/* notre table demande - espace prof */
+
+
+body {
+    background-image: url('image/back.jpg'); /* Replace 'your-image-url.jpg' with the actual path to your image */
+    background-size: cover; /* This property ensures that the background image covers the entire viewport */
+    background-position: center center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+}
+
+.table-container {
+    
+max-width: 800px;
+margin: 20px auto;
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+/* margin-top: 100px; */
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 20px;
+margin-left: auto;
+margin-right: auto;
+}
+
+th, td {
+border: 1px solid #ddd;
+padding: 12px;
+text-align: center;
+}
+
+th {
+background-color: #f2f2f2;
+cursor: pointer;
+
+}
+a{
+text-decoration: none;
+color: white;
+font-weight: bold;
+}
+
+/* Ajoutez ces styles pour rendre le tableau réactif sur les petits écrans */
+
+@media (max-width: 600px) {
+th, td {
+display: block;
+width: 100%;
+box-sizing: border-box;
+}
+
+th {
+text-align: center;
+}
+}
+
+.repondre {
+background-color: #4CAF50;
+color: #fff;
+border: none;
+padding: 8px 12px;
+cursor: pointer;
+border-radius: 4px;
+}
+
+.refuser {
+background-color: #f44336;
+color: #fff;
+border: none;
+padding: 8px 12px;
+cursor: pointer;
+border-radius: 4px;
+}
+.announce{
+background-color: grey;
+color: #fff;
+border: none;
+padding: 8px 12px;
+cursor: pointer;
+border-radius: 4px;
+}
+.section2 {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+    color: #666;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+

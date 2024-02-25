@@ -1,0 +1,110 @@
+
+/*
+############################################################
+---------------- page clubs pricibale  ----------------
+############################################################
+*/
+#containerClubs {
+ display: flex;
+ width: 100%;
+}
+
+#leftCl {
+ width: 70%;
+ flex-wrap: wrap;
+ background-color: #fff;
+ padding: 20px;
+ box-sizing: border-box;
+}
+
+#announcesCl {
+ width: 30%;
+ margin-left: 5%;
+ background-color: #fff;
+ padding: 20px;
+ box-sizing: border-box;
+ flex-grow: 1;
+ margin-top: 57px; 
+}
+
+.Clubs {
+ width: 80%;
+ margin: auto;
+ text-align: center;
+ padding-top: 50px;
+}
+
+.Clubs-col {
+ flex-basis: 32%;
+ border-radius: 10px;
+ margin-bottom: 30px;
+ position: relative;
+ overflow: hidden;
+ 
+}
+
+.Clubs-col img {
+ width: 100%;
+}
+
+.layer {
+ background: transparent;
+ height: 100%;
+ width: 100%;
+ top: 0;
+ left: 0;
+ position: absolute;
+ transition: transform 0.5s;
+ z-index: 1; /* Assurer que le lien est cliquable en plaçant la couche au-dessus de l'image */
+}
+
+.layer:hover {
+ transform: scale(1.1);
+}
+
+.layer h3 {
+ width: 100%;
+ font-weight: 500;
+ color: #fff;
+ font-size: 26px;
+ bottom: 0;
+ left: 50%;
+ transform: translateX(-50%);
+ position: absolute;
+ opacity: 0;
+ transition: opacity 0.5s;
+}
+
+.layer:hover h3 {
+ bottom: 49%;
+ opacity: 1;
+}
+.Clubs-col img{
+ width: 38%; 
+}
+
+/* Ajout de styles pour le lien sous l'image */
+.Clubs-col a {
+ display: block;
+ position: relative;
+ overflow: hidden;
+ z-index: 2; /* Assurer que le lien est cliquable en plaçant le lien au-dessus de la couche */
+}
+
+.Clubs-col a::after {
+ content: "";
+ display: block;
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: rgba(173, 216, 230, 0.5); /* Light Sky Blue color with alpha for transparency */
+ z-index: 1;
+ transition: background 0.5s;
+}
+
+.Clubs-col a:hover::after {
+ background: rgba(173, 216, 230, 0.8); /* Darker Light Sky Blue color on hover */
+}
+
