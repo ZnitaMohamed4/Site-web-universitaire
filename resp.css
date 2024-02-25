@@ -1,0 +1,55 @@
+/* styles.css */
+
+/* Header Styles */
+.header {
+  color: white;
+  font-size: 15px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  padding-top: 30px;
+}
+
+/* Table Styles */
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th,
+.table td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 12px; /* Increased padding for better visual appearance */
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+/* Modification Form Styles */
+.modification-form {
+  display: flex;
+  align-items: center; /* Center content vertically */
+}
+
+.modification-form form {
+  margin: 0; /* Remove default margin */
+}
+
+.modification-form input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 14px; /* Adjust padding for better button appearance */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.modification-form input[type="submit"]:hover {
+  background-color: #45a049; /* Darker color on hover */
+}

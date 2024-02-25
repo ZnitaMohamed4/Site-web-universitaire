@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Sign up / Login Form</title>
+  <link rel="stylesheet" href="css/log.css">
+	<link rel="stylesheet" href="css/style.css">
+
+  <style>
+        body {
+            background-image: url('images/back.jpg'); /* Replace 'your-image-url.jpg' with the actual path to your image */
+            background-size: cover; /* This property ensures that the background image covers the entire viewport */
+            background-position: center center; /* Center the background image */
+            background-repeat: no-repeat; /* Do not repeat the background image */
+        }
+    </style>
+
+
+
+</head>
+<body>
+
+
+<div class="conainer-main">
+	<div class="main" style="height: 375px;" >
+
+
+			<div class="login-chef-depart">
+				<form method="post" action="">
+					<label for="chk" aria-hidden="true" style="color: #fffefe; font-size :20px; text-align: center ; " >Login Responsable Pedagogique</label>
+					<input type="email" name="email_exist" placeholder="Email" required="">
+					<input type="password" name="pass_exist" placeholder="Password" required="">
+					<input type="submit" value="Valider" class="button">
+          <input type="hidden" name="id_prof" value="<?php echo $id_prof; ?>">
+				</form>
+			</div>
+		</div>
+	</div>
+
+  <?php
+
+//include("conn.php");
+
+
+$con = mysqli_connect("localhost", "root", "", "our_project2", 3307);
+
+// Check the connection
+if (!$con) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $Email = $_POST['email_exist'];
+    $Pass = $_POST['pass_exist'];
+
+    $sql = "SELECT * FROM responsable_pedagogique WHERE email_resp = '$Email' AND password = '$Pass'";
+    $res = mysqli_query($conn, $sql);
+
+            if ($res) {
+                // Utilisation de mysqli_num_rows pour vérifier si des résultats sont retournés
+                if (mysqli_num_rows($res) > 0) {
+
+                                    $row = mysqli_fetch_assoc($res);
+                                    $nom_chef = $row['nom_chef'];
+                                    $id_chef = $row['id_chef'];
+
+
+                                    header("Location: EspaceChefD.php?id_chef=$id_chef&nom_chef=$nom_chef");
+                                      exit();
+                  }
+
+                      else {      ?>
+                          <script>
+                                alert("Identifiants incorrects") ;
+                          </script>
+
+                  <?php
+                    }
+
+            }
+             else {
+                  echo "Erreur de requête : " . mysqli_error($conn);
+                  }
+
+}
+
+?>
+
+
+
+</body>
+</html>
